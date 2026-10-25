@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login</title>
+    <style>
+           * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #168ce5,
+        #2877db,
+        #56c9f5
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 28px;
+    padding: 48px 40px;
+    text-align: center;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(0, 40, 100, 0.15);
+}
+
+.login-box h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.login-box input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 22px;
+    padding: 0 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    transition: 0.3s;
+}
+
+.login-box input[type="email"] {
+    background: rgba(255, 255, 255, 0.92);
+    color: #333;
+}
+
+.login-box input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.login-box input[type="email"]::placeholder {
+    color: #888;
+}
+
+.login-box input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.login-box button {
+    width: 100%;
+    height: 62px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(100deg, #b68bff, #16d7e5);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 70, 150, 0.2);
+}
+
+.signup {
+    margin-top: 28px;
+    color: white;
+    font-size: 16px;
+}
+
+.signup a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.signup a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 18px;
+    color: white;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 35px 22px;
+    }
+
+    .login-box h1 {
+        font-size: 30px;
+    }
+
+    .login-box input {
+        height: 55px;
+    }
+
+    .login-box button {
+        height: 55px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <form action="https://formspree.io/f/xkjjgdzo" method="post" 
+        class="login-box" id="loginForm">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Login to continue</p>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+                name="email"
+            >
+
+            <input
+                type="Text"
+                id="Text"
+                placeholder="Enter your text"
+                required
+                name="text"
+            >
+
+            <button type="submit">Login</button>
+
+            <p class="signup">
+                New here?
+                <a href="#" id="signupLink">Create Account</a>
+            </p>
+
+            <p class="message" id="message"></p>
+        </form>
+    
+    </div>
+
+    <script>
+  document.getElementById("signupLink").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    document.getElementById("message").textContent =
+      "Create Account page can be added here.";
+  });
+</script>
+
+</body>
+</html>
